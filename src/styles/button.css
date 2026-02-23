@@ -1,0 +1,91 @@
+/* Animated button style inspired by Uiverse.io */
+.animated-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.6em 2em;
+  border: #FDE047 solid 0.15em;
+  border-radius: 0.25em;
+  color: #FDE047;
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.animated-button span {
+  z-index: 1;
+}
+
+.animated-button:hover {
+  color: #0A0A0A;
+}
+
+.animated-button:active {
+  border-color: #DC2626;
+}
+
+.animated-button::after, 
+.animated-button::before {
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: #FDE047;
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
+}
+
+.animated-button::before {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.animated-button::after {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.animated-button:hover:before {
+  transform: translateX(-1em);
+}
+
+.animated-button:hover:after {
+  transform: translateX(1em);
+}
+
+.animated-button:active:before,
+.animated-button:active:after {
+  background: #DC2626;
+}
+
+/* Secondary button variant (green) */
+.animated-button.secondary {
+  border-color: #16A34A;
+  color: #16A34A;
+}
+
+.animated-button.secondary::after, 
+.animated-button.secondary::before {
+  background: #16A34A;
+}
+
+.animated-button.secondary:hover {
+  color: #0A0A0A;
+}
+
+.animated-button.secondary:active {
+  border-color: #FDE047;
+}
+
+.animated-button.secondary:active:before,
+.animated-button.secondary:active:after {
+  background: #FDE047;
+}
